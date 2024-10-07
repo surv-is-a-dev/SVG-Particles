@@ -1,0 +1,65 @@
+<!--<![CDATA[
+  /**!
+    * SVG Particles (Site) example
+    * @author 0znzw https://scratch.mit.edu/users/0znzw/
+    * @version 1.0
+    * @copyright MIT License
+    * Do not remove this comment
+    * This does not apply to anything outside this file
+    */
+]]>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SVG Particles</title>
+  <style>
+    /* for other browsers that are not chrome */
+    :root *:not(svg) {
+      /* start transform origin */
+      transform-origin: 0px 0px;
+      /* firefox */
+      -moz-transform-origin: 0px 0px;
+      /* IE8 */
+      -ms-transform-origin: 0px 0px;
+      /* safari */
+      -webkit-transform-origin: 0px 0px;
+      /* opera */
+      -o-transform-origin: 0px 0px;
+      /* end transform origin */
+    }
+    svg:not(:root) {
+      overflow-clip-margin: content-box;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    // <![CDATA[
+    (() => {
+      const query = new URLSearchParams(window.location.search);
+      window.ParticleTools_onLibraryLoad = function(generateAnimation) {
+        const seed = query.has('testSeed') ? /*
+          Fun fact!
+          This number is the date I joined discord, on my new account, in the julian date format.
+        */2460127 : Number(query ?? Date.now());
+        document.write(generateAnimation(
+          seed,
+          15,
+          149.8,
+          56.7,
+          '7s',
+          // Thanks for the block path blockly!
+          'm 0,4 A 4,4 0 0,1 4,0 H 12 c 2,0 3,1 4,2 l 4,4 c 1,1 2,2 4,2 h 12 c 2,0 3,-1 4,-2 l 4,-4c 1,-1 2,-2 4,-2 H 143.55555725097656 a 4,4 0 0,1 4,4 v 40  a 4,4 0 0,1 -4,4 H 48   h 0c -2,0 -3,1 -4,2 l -4,4 c -1,1 -2,2 -4,2 h -12 c -2,0 -3,-1 -4,-2 l -4,-4c -1,-1 -2,-2 -4,-2 H 4 a 4,4 0 0,1 -4,-4 z'
+        ));
+      };
+    })();
+    // ]]>
+  </script>
+  <!-- Look at ./src-script.js for the OG code -->
+  <script src="./babel-script.js"></script>
+  <!-- Comment-->
+</body>
+</html>
